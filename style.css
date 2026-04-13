@@ -20,8 +20,8 @@ p {
 }
 
 body {
-    width: 100vw;
-    height: 100vh;
+    min-width: 100vw;
+    min-height: 100vh;
     font-family: "Montserrat", sans-serif;
     font-optical-sizing: auto;
     font-weight: 400;
@@ -37,7 +37,7 @@ body {
 /* main container in the center */
 
 main {
-    height: 100%;
+    height: 100vh;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -128,9 +128,82 @@ main {
     background-color: var(--Green_500);
     color: var(--White);
     max-width: 100%;
-    width: inherit;
+    width: 100%;
     border-radius: 10px;
     padding: 15px 25px;
     font-size: 1.5em;
     border: none;
+    cursor: pointer;
+}
+
+
+@media (max-width:800px) and (min-width:298px) {
+
+    * {
+        margin: 0;
+        padding: 0;
+    }
+
+    main {
+        width: 100%;
+        height: auto;
+    }
+
+    .mobile {
+        display: block;
+    }
+
+    .desktop {
+        display: none;
+    }
+
+
+    /* mobile design */
+
+    .card {
+        max-width: 25em;
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+        margin: 4rem 2rem;
+    }
+
+    .card .product img:last-of-type {
+        max-width: 100%;
+        height: auto;
+        border-top-left-radius: 10px;
+        border-top-right-radius: 10px;
+    }
+
+    .des-container {
+        width: auto;
+        padding: 10px;
+        margin: 0 10px;
+    }
+
+    .des-container .product-name {
+        font-size: 2.5em;
+        font-weight: 900;
+    }
+
+    .des-container .description {
+        font-size: 1em;
+        padding: 0 5px;
+    }
+
+    /* price container for mobile size */
+
+    .des-container .price-container {
+        gap: 20px;
+    }
+
+    .des-container .price-container .price {
+        font-size: 3em;
+    }
+
+    /* button mobile size */
+
+    .des-container button {
+        margin: 20px 0;
+    }
 }
